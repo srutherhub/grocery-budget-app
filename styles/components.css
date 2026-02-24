@@ -1,0 +1,8 @@
+.primary-button {
+  border-radius: var(--radius-md);
+  border: var(--border-primary);
+  box-shadow: (var--box-shadow);
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  padding: var(--pad-sm);
+}
