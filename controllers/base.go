@@ -11,8 +11,8 @@ func BaseController() controller.Controller {
 
 	baseController.SetBase("/")
 
-	baseController.RegisterRoute(controller.Route{Method: "GET", Path: "", Handler: h.Base})
-	baseController.RegisterRoute(controller.Route{Method: "GET", Path: "app", Handler: h.App})
+	baseController.RegisterRoute(controller.Route{Method: "GET", Path: "", Handler: h.Base()})
+	baseController.RegisterRoute(controller.Route{Method: "GET", Path: "app", Handler: h.App()})
 
 	return *baseController
 }

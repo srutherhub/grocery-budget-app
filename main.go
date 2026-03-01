@@ -12,6 +12,7 @@ func main() {
 	s := server.New()
 
 	s.RegisterController(c.BaseController())
+	s.RegisterController(c.ApiController())
 
 	s.Start(cfg)
 }

@@ -4,7 +4,7 @@ go 1.25.1
 
 require (
 	github.com/a-h/templ v0.3.977
-	github.com/srutherhub/web-app v0.0.6
+	github.com/srutherhub/web-app v0.0.12
 )
 
 require (

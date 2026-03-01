@@ -1,12 +1,70 @@
 package views
 
+import comp "app/views/components"
+
 templ App() {
-<div class="app-container">
-  <div class="chat-container">
-    <textarea id="app-chat-input" class="chat-input" autocomplete="off" placeholder="Reply..."></textarea>
-    <div class="app-chat-submit">
-      <button id="app-chat-submit-btn" class="primary-button">&uarr;</button>
-    </div>
-  </div>
-</div>
+	<div class="app-container">
+		@comp.Menu()
+		<div class="chat-window" id="chat-window">
+			@QuickActions()
+		</div>
+		<div class="chat-container">
+			@Chat()
+			@QuickBar()
+			@FileLoader()
+		</div>
+	</div>
+}
+
+templ QuickActions() {
+	<div class="quick-actions-container">
+		<button class="quick-action button-secondary">
+			Dashboard
+		</button>
+		<button class="quick-action button-secondary">
+			Add receipt
+		</button>
+		<button class="quick-action button-secondary">
+			Ask a question
+		</button>
+		<button class="quick-action button-secondary" onclick="document.getElementById('photo-input').click()">
+			Upload
+		</button>
+	</div>
+}
+
+templ QuickBar() {
+	<div class="quick-bar-container" id="quick-bar-container">
+		<button class="button-secondary">Dashboard</button>
+		<button class="button-secondary" onclick="document.getElementById('photo-input').click()">Upload</button>
+		<button class="button-secondary">Add receipt</button>
+		<button class="button-secondary">Ask a question</button>
+	</div>
+}
+
+templ Chat() {
+	<div class="chat">
+		<textarea name="msg" id="app-chat-input" class="chat-input" autocomplete="off" placeholder="Reply..."></textarea>
+		<div class="app-chat-submit">
+			<button
+				id="app-chat-submit-btn"
+				class="button-primary"
+				hx-post="/api/chat/submit"
+				hx-target="#chat-window, #photo-input"
+				hx-swap="innerHTML"
+				hx-include="#app-chat-input"
+				hx-on::after-request="onChatSubmit()"
+			>Ent</button>
+		</div>
+	</div>
+}
+
+templ FileLoader() {
+	<input
+		id="photo-input"
+		type="file"
+		name="photo"
+		accept="image/*"
+		style="display:none"
+	/>
 }

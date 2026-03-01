@@ -13,6 +13,7 @@
   --pad-md: 1rem;
   --pad-lg: 2rem;
   --pad-xl: 3rem;
+  --pad-xxl: 4rem;
 
   --radius-xs: 2px;
   --radius-sm: 4px;
@@ -31,9 +32,20 @@
   --color-text: #152c14;
   --color-muted: #697471;
 
-  --border-primary: border: 1px var(--color-surface) solid;
+  --border-primary: 1px var(--color-surface) solid;
 
   --box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -41,7 +53,8 @@ html {
   font-size: var(--font-size-md);
   letter-spacing: 0.01em;
   word-spacing: 0.05em;
-  background-color: var(--color-text);
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 textarea {
@@ -58,6 +71,10 @@ button {
   word-spacing: 0.05em;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -65,7 +82,7 @@ body {
   height: 100dvh;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     --color-primary: rgb(46, 184, 68);
     --color-background: #111612;

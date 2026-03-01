@@ -1,0 +1,23 @@
+package views
+
+templ Menu() {
+	<div class="menu-container">
+		<button popovertarget="app-menu" class="button-secondary" alt="open-app-menu">Menu</button>
+		<div id="app-menu" class="app-menu" popover="manual">
+			@MenuOptions()
+		</div>
+	</div>
+}
+
+templ MenuOptions() {
+	<div class="app-menu-title">
+		<h2>Logo</h2>
+		<button popovertarget="app-menu" class="button-secondary" alt="close-app-menu">Close</button>
+	</div>
+	<div class="app-menu-options-container">
+		<div>
+			<p>Dashboard</p>
+		</div>
+		<div><p>Settings</p><p>Account</p></div>
+	</div>
+}

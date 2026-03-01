@@ -1,0 +1,11 @@
+package views
+
+type IUserMessageProps struct {
+	Content string
+}
+
+templ UserMessage(props IUserMessageProps) {
+	<div class="chat-message">
+		{ props.Content }
+	</div>
+}
