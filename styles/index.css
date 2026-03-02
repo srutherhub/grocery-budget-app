@@ -82,6 +82,11 @@ body {
   height: 100dvh;
 }
 
+main {
+  width: 100vw;
+  height: 100dvh;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-primary: rgb(46, 184, 68);
@@ -90,4 +95,13 @@ body {
     --color-text: #d4e8d3;
     --color-muted: #8a9e8a;
   }
+}
+
+aside {
+  color: var(--color-muted);
+}
+
+a {
+  text-decoration: underline;
+  color: var(--color-muted);
 }

@@ -27,7 +27,6 @@ function onChatSubmit(el) {
   el = document.getElementById("app-chat-submit-btn");
   el.setAttribute("hx-swap", "beforeend");
   document.getElementById("app-chat-input").value = "";
-
   document.querySelector(".quick-bar-container").classList.add("show");
 }
 

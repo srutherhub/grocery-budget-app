@@ -1,0 +1,25 @@
+package views
+
+templ Login() {
+	<div class="auth-container">
+		<form class="login-form-container" hx-post="/api/auth/login">
+			<div>
+				<h2>Login</h2>
+			</div>
+			<div class="login-inputs">
+				<label>Email</label>
+				<input type="text" class="input-primary" name="username"/>
+			</div>
+			<div class="login-inputs">
+				<label>Password</label>
+				<input type="password" class="input-primary" name="password"/>
+			</div>
+			<div class="login-inputs">
+				<button class="button-primary">Continue</button>
+			</div>
+			<div class="login-footer">
+				<aside>Don't have an account? <a href="/signup">Sign up instead.</a></aside>
+			</div>
+		</form>
+	</div>
+}

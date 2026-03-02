@@ -22,3 +22,19 @@ func App() func(w http.ResponseWriter, r *http.Request) {
 		v.Index(apppage, props).Render(r.Context(), w)
 	}
 }
+
+func Login() func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		loginpage := views.Login()
+		props := v.IndexProps{Title: "Login"}
+		v.Index(loginpage, props).Render(r.Context(), w)
+	}
+}
+
+func Signup() func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		signuppage := views.Signup()
+		props := v.IndexProps{Title: "Signup"}
+		v.Index(signuppage, props).Render(r.Context(), w)
+	}
+}

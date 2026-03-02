@@ -78,3 +78,15 @@
     background-color: var(--color-muted);
   }
 }
+
+.input-primary {
+  color: var(--color-text);
+  width: 100%;
+  background-color: var(--color-surface);
+  border-radius: var(--pad-sm);
+  border: var(--border-primary);
+  outline: none;
+  padding: var(--pad-sm);
+  box-sizing: border-box;
+  font-size: var(--font-size-md);
+}
